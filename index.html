@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hello, I am writing to AGOL!</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+
+  <!-- calls for the arcgis api's CSS file and JS library. -->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.25/esri/themes/light/main.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://js.arcgis.com/4.25/"></script>
+  <script src="script.js"></script>
+
+</head>
+<body>
+
+  <div class="main">
+    <div class="sidebar">
+        <div class="header">
+            <h1>UFO Sightings North America</h1>
+            <p>By Christian Graham</p>
+            <p>Click on a card to focus map</p>
+        </div>
+        <form onsubmit="event.preventDefault(); filterResults()">
+          <input type="text" id="userInput" placeholder="Search by location" name="search">
+          <button type="submit">Submit</button>
+      </form>
+        <div class="cards">
+            loading ufos... refresh if map not displaying
+          </div>
+    </div>
+    <div id="viewDiv"></div>
+    <script src="search.js"></script>
+  </div>
+  <div class="stats">
+    <h1>Some interesting info about this UFO sightings dataset (not updated with new data)</h1>
+    <img src="public/Screenshot from 2024-04-18 20-52-50.png" alt="">
+    <img src="public/Screenshot from 2024-04-18 20-53-12.png" alt="">
+    <img src="public/Screenshot from 2024-04-18 20-53-36.png" alt="">
+  </div>
+
+
+</body>
+</html>
