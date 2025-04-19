@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFO Sightings Analysis Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            font-family: 'Arial', sans-serif;
+        }
+        .card {
+            background-color: #1e293b;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card-title {
+            color: #38bdf8;
+            font-weight: bold;
+        }
+        .iframe-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .responsive-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-gray-900 shadow-lg py-6 mb-8">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl font-bold text-center text-blue-400">UFO Sightings Analysis Dashboard</h1>
+            <p class="text-center text-gray-400 mt-2">Exploring patterns in reported UFO sightings data</p>
+        </div>
+    </header>
+
+    <div class="container mx-auto px-4 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Interactive Map -->
+            <div class="card col-span-1 lg:col-span-3 p-4">
+                <h2 class="card-title text-xl mb-4">Interactive UFO Sightings Map</h2>
+                <div class="iframe-container">
+                    <iframe class="responsive-iframe" src="visualizations/ufo_sightings_map.html" allowfullscreen></iframe>
+                </div>
+                <p class="mt-4 text-gray-400">This map shows the geographical distribution of reported UFO sightings. The heatmap indicates areas with higher concentrations of sightings, while markers provide details about individual reports.</p>
+            </div>
+
+            <!-- Density Map -->
+            <div class="card col-span-1 lg:col-span-3 p-4">
+                <h2 class="card-title text-xl mb-4">UFO Sightings Density Map</h2>
+                <div class="iframe-container">
+                    <iframe class="responsive-iframe" src="visualizations/density_map_plotly.html" allowfullscreen></iframe>
+                </div>
+                <p class="mt-4 text-gray-400">This density map highlights UFO sighting hotspots across regions, showing the concentration of reports in different geographical areas.</p>
+            </div>
+
+            <!-- Yearly Trend -->
+            <div class="card p-4">
+                <h2 class="card-title text-xl mb-4">Yearly Trend of UFO Sightings</h2>
+                <img src="visualizations/yearly_trend.png" alt="Yearly trend of UFO sightings" class="w-full rounded">
+                <p class="mt-4 text-gray-400">The chart shows how the number of reported UFO sightings has changed over the years, highlighting periods of increased activity.</p>
+            </div>
+
+            <!-- Monthly Pattern -->
+            <div class="card p-4">
+                <h2 class="card-title text-xl mb-4">Monthly Pattern of UFO Sightings</h2>
+                <img src="visualizations/monthly_pattern.png" alt="Monthly pattern of UFO sightings" class="w-full rounded">
+                <p class="mt-4 text-gray-400">This visualization shows which months have the highest number of UFO sightings, revealing seasonal patterns in reports.</p>
+            </div>
+
+            <!-- Hourly Pattern -->
+            <div class="card p-4">
+                <h2 class="card-title text-xl mb-4">UFO Sightings by Hour of Day</h2>
+                <img src="visualizations/hourly_pattern.png" alt="Hourly pattern of UFO sightings" class="w-full rounded">
+                <p class="mt-4 text-gray-400">This chart displays when UFO sightings are most commonly reported throughout the day, distinguishing between daytime and nighttime observations.</p>
+            </div>
+
+            <!-- UFO Shapes -->
+            <div class="card p-4">
+                <h2 class="card-title text-xl mb-4">Top Reported UFO Shapes</h2>
+                <img src="visualizations/ufo_shapes.png" alt="Top reported UFO shapes" class="w-full rounded">
+                <p class="mt-4 text-gray-400">This visualization ranks the most commonly reported shapes of UFOs, providing insight into what witnesses claim to have seen.</p>
+            </div>
+
+            <!-- Shape Trends -->
+            <div class="card p-4">
+                <h2 class="card-title text-xl mb-4">UFO Shape Trends Over Time</h2>
+                <img src="visualizations/shape_trends.png" alt="UFO shape trends over time" class="w-full rounded">
+                <p class="mt-4 text-gray-400">This chart shows how the reporting of different UFO shapes has changed over time, revealing evolving patterns in sighting descriptions.</p>
+            </div>
+
+            <!-- Word Cloud -->
+            <div class="card p-4">
+                <h2 class="card-title text-xl mb-4">Common Words in UFO Sighting Descriptions</h2>
+                <img src="visualizations/summary_wordcloud.png" alt="Word cloud from UFO descriptions" class="w-full rounded">
+                <p class="mt-4 text-gray-400">This word cloud highlights the most frequent terms used in UFO sighting descriptions, offering insight into common themes in witness accounts.</p>
+            </div>
+
+            <!-- US State Distribution -->
+            <div class="card p-4">
+                <h2 class="card-title text-xl mb-4">Top US States by UFO Sightings</h2>
+                <img src="visualizations/us_state_distribution.png" alt="Top US states by UFO sightings" class="w-full rounded">
+                <p class="mt-4 text-gray-400">This chart shows which US states have the highest number of reported UFO sightings.</p>
+            </div>
+
+            <!-- Shape-Hour Heatmap -->
+            <div class="card p-4">
+                <h2 class="card-title text-xl mb-4">UFO Shape Distribution by Hour</h2>
+                <img src="visualizations/shape_hour_heatmap.png" alt="Shape distribution by hour heatmap" class="w-full rounded">
+                <p class="mt-4 text-gray-400">This heatmap shows whether certain UFO shapes are more likely to be reported at specific times of day.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-gray-900 py-6">
+        <div class="container mx-auto px-4">
+            <p class="text-center text-gray-400">UFO Sightings Analysis Dashboard</p>
+            <p class="text-center text-gray-500 text-sm mt-2">This project analyzes reported UFO sightings data without making claims about their authenticity.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to handle errors in iframe loading
+        document.addEventListener('DOMContentLoaded', function() {
+            const iframes = document.querySelectorAll('iframe');
+            
+            iframes.forEach(iframe => {
+                iframe.onerror = function() {
+                    const container = iframe.parentElement;
+                    container.innerHTML = '<div class="bg-red-900 text-white p-4 rounded">Visualization file not found. Run the analysis script to generate this visualization.</div>';
+                };
+            });
+        });
+    </script>
+</body>
+</html> 
